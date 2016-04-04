@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using FromJavaToDotNet.ConceptosAvanzados.ExtensionMethods;
 using FromJavaToDotNet.ConceptosAvanzados.Inheritance;
 using FromJavaToDotNet.ConceptosAvanzados.Interfaces;
+using FromJavaToDotNet.ConceptosAvanzados.OperatorOverload;
 using FromJavaToDotNet.ConceptosAvanzados.PartialClass;
 
 namespace FromJavaToDotNet
@@ -15,9 +19,66 @@ namespace FromJavaToDotNet
             //InternalAndRefExamples();
             //UseOfCollections();
             //PartialClasses();
-            Inheritance();
+            //Inheritance();
             //Interfaces();
+            //ExtensionsMethods();
+            //LinQ();
+            //OperatorOverload();
+            //AsyncAwait();
             Console.ReadLine();
+        }
+
+        private  static async Task AsyncAwait()
+        {
+            var lastNumber = await GetLastNumber();
+            Console.WriteLine(lastNumber);
+        }
+
+        private static async Task<int> GetLastNumber()
+        {
+            var i = 0;
+            for (; i < 1000000; i++)
+            {
+                
+            }
+            return i;
+        }
+
+        private static void OperatorOverload()
+        {
+            var a = new Teacher("Paco", "Paco");
+            var b = new Teacher("Paco", "Luis");
+            Console.WriteLine(a == b);
+            Console.WriteLine(a != b);
+            b.Desc = "Paco";
+            Console.WriteLine(a == b);
+            Console.WriteLine(a != b);
+        }
+
+        private static void LinQ()
+        {
+            var lista = new List<string> {"hola", "hay", "alubias", "para", "comer", "mundo", "morcilla"};
+            var conversion = lista.Where(p => p.StartsWith("h")).ToList();
+            foreach (var temp in conversion)
+            {
+                Console.WriteLine(temp);
+            }
+
+            var result = from a in lista
+                               where a.Contains("o")
+                               select a;
+
+            foreach (var temp in result)
+            {
+                Console.WriteLine(temp);
+            }
+        }
+
+        private static void ExtensionsMethods()
+        {
+            var number = 4;
+            number = number.IncreaseByOne();
+            Console.WriteLine(number);
         }
 
         private static void Inheritance()

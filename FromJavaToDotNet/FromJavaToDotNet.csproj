@@ -43,10 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ConceptosAvanzados\ExtensionMethods\ExtensionInteger.cs" />
     <Compile Include="ConceptosAvanzados\Inheritance\Car.cs" />
     <Compile Include="ConceptosAvanzados\Inheritance\Vehicle.cs" />
     <Compile Include="ConceptosAvanzados\Interfaces\FileParser.cs" />
     <Compile Include="ConceptosAvanzados\Interfaces\IParser.cs" />
+    <Compile Include="ConceptosAvanzados\OperatorOverload\Teacher.cs" />
     <Compile Include="ConceptosAvanzados\PartialClass\Animal.cs" />
     <Compile Include="ConceptosAvanzados\PartialClass\AnimalMethods.cs" />
     <Compile Include="Program.cs" />
@@ -55,6 +57,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
